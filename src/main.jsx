@@ -12,6 +12,7 @@ import {
 import Home from './components/Pages/Home.jsx'
 import RootLayout from './components/Layouts/RootLayouts.jsx'
 import Shop from './components/Pages/Shop.jsx'
+import Cart from './components/Pages/Cart.jsx'
 
 
 const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path='/shop' index element={<Shop />} />
+      <Route path='/cart' index element={<Cart />} />
     </Route>
   )
 )

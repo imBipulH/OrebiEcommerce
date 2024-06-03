@@ -4,6 +4,7 @@ import { IoCart, IoPerson } from 'react-icons/io5'
 import Dropdown from '../Layouts/Dropdown'
 import { useEffect, useRef, useState } from 'react'
 import { ImCross } from 'react-icons/im'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const personRef = useRef()
@@ -12,6 +13,7 @@ const Header = () => {
   const [show, setShow] = useState(false)
   const [userShow, setUserShow] = useState(false)
   const [cartShow, setCartShow] = useState(false)
+  const navigate = useNavigate()
 
   const categories = [
     'Accesories',
@@ -125,7 +127,7 @@ const Header = () => {
                     Subtotal: <span className='font-bold'>$44.00</span>
                   </p>
                   <div className='flex justify-between'>
-                    <button className='py-3 border border-primary hover:bg-primary hover:text-white duration-200 w-[150px] text-sm  font-bold'>
+                    <button onClick={()=> navigate('/cart')} className='py-3 border border-primary hover:bg-primary hover:text-white duration-200 w-[150px] text-sm  font-bold'>
                       View Cart
                     </button>
                     <button className='py-3 border border-primary hover:bg-primary hover:text-white duration-200 w-[150px] text-sm  font-bold'>
